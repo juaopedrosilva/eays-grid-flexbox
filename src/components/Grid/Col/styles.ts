@@ -1,50 +1,35 @@
 import styled from "styled-components";
 
-import { device } from '../config'
-import { getWidthGrid } from '../utils'
- 
-import { ICol } from './index'
+import { device } from "../config";
+import { getWidthGrid } from "../utils";
+
+import { ICol } from "./index";
 
 export const Container = styled.div<ICol>` 
+  position: relative; 
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; 
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;  
+  white-space: nowrap;
 
-  padding-top: .75rem;
-  padding-bottom: .75rem; 
-  position: relative; 
-  padding-right: 15px;
-  padding-left: 15px;
 
   ${({ mobile }) => {
-    if (mobile) {
-      return `${device.mobile} {  
-        ${getWidthGrid(mobile)}
-      }`;
-    } else {
-      return `${getWidthGrid(3)}`;
-    }
+    return `${device.mobile} {  
+      ${mobile && getWidthGrid(mobile)}
+    }`;
   }}
 
   ${({ tablet }) => {
-    if (tablet) {
-      return `${device.tablet} {  
-          ${getWidthGrid(tablet)} 
-        }`;
-    } else {
-      return `${getWidthGrid(3)}`;
-    }
+    return `${device.tablet} {  
+      ${tablet && getWidthGrid(tablet)}
+    }`;
   }}
-
-
+  
   ${({ desktop }) => {
-    if (desktop) {
-      return `${device.desktop} {   
-          background: pink;
-          ${getWidthGrid(desktop)} 
-        }`;
-    } else {
-      return `${getWidthGrid(3)}`;
-    }
-  }}
+    return `${device.desktop} {  
+      ${desktop && getWidthGrid(desktop)}
+    }`;
+  }} 
 `;

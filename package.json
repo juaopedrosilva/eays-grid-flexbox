@@ -9,8 +9,7 @@
     "storybook": "start-storybook -p 8080",
     "build": "tsc -p ."
   },
-  "dependencies": {
-    "polished": "^3.5.1",
+  "dependencies": { 
     "styled-components": "^5.1.0"
   },
   "devDependencies": {

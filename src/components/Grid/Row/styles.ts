@@ -10,5 +10,4 @@ export const RowWrapper = styled.div<IRow>`
   width: 100%;
 
   ${(props) => getPropertyJustifyContent(props)} 
-
 ` 
